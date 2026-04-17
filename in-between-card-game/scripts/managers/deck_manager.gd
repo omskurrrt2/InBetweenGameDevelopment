@@ -21,6 +21,10 @@ const RANKS := [
 	{"rank": "Ace", "value": 14}
 ]
 
+func setup_new_shoe() -> void:
+	build_full_deck()
+	shuffle_deck()
+
 func build_full_deck() -> void:
 	deck.clear()
 	discard_pile.clear()
@@ -54,7 +58,8 @@ func draw_multiple(count: int) -> Array[Card]:
 
 func discard_cards(cards: Array[Card]) -> void:
 	for card in cards:
-		discard_pile.append(card)
+		if card != null:
+			discard_pile.append(card)
 
 func reshuffle_if_needed() -> void:
 	if deck.is_empty() and not discard_pile.is_empty():
@@ -66,4 +71,4 @@ func get_remaining_count() -> int:
 	return deck.size()
 
 func get_used_count() -> int:
-	return 52 - deck.size()
+	return discard_pile.size()

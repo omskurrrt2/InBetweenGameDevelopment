@@ -1,223 +1,221 @@
-[gd_scene format=3 uid="uid://dejn3bi06l48k"]
+[gd_scene format=3 uid="uid://c1ll6lvt6f43r"]
 
-[ext_resource type="Script" uid="uid://cqougfqcss5qf" path="res://scripts/core/main.gd" id="1_u1xfj"]
-[ext_resource type="Script" uid="uid://6qjb6rftftvg" path="res://scripts/managers/game_manager.gd" id="2_nha0i"]
-[ext_resource type="Texture2D" uid="uid://bnla5j7nn5qx0" path="res://table.png" id="2_q24mn"]
-[ext_resource type="Texture2D" uid="uid://ejcs0pf6ywec" path="res://assets/SpriteSheet/full card set.png" id="3_gyg6b"]
+[ext_resource type="Script" uid="uid://c1vls3trrioh3" path="res://scripts/ui/player_panel.gd" id="1_4mj0i"]
+[ext_resource type="Texture2D" uid="uid://ejcs0pf6ywec" path="res://assets/SpriteSheet/full card set.png" id="2_74jc5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lc16r"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(273, 821, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3yhk"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(95, 455, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yncj5"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(184, 455, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7lhwx"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(273, 455, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3nc8"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(362, 455, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ofw2"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(451, 455, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlera"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(540, 455, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i5rwh"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(629, 455, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdvep"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(718, 455, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vytgm"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(807, 455, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3blb2"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(896, 455, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kc7e0"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(629, 699, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n4nnq"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(540, 699, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iukrr"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(451, 699, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kxg5y"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(95, 333, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7sa8u"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(184, 333, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3fpl1"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(273, 333, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eepof"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(362, 333, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0cge"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(451, 333, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdrsl"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(540, 333, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_axunm"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(629, 333, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2nmvj"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(718, 333, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vc0jo"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(807, 333, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjrn4"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(896, 333, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6y6bq"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(629, 577, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sy37d"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(540, 577, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tel0"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(451, 577, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_71b3v"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(95, 89, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x6x84"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(184, 89, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_23t6m"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(273, 89, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uvkep"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(362, 89, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5cx6t"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(451, 89, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4h1tn"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(540, 89, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p448s"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(629, 89, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4dvuu"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(718, 89, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o4c3t"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(807, 89, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_871s5"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(896, 89, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6hwc"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(273, 577, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0mfru"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(184, 577, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p63dp"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(95, 577, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lk22t"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(95, 211, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dc7he"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(184, 211, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ea4j7"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(273, 211, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_68hcg"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(362, 211, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6gtrv"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(451, 211, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mx7cp"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(540, 211, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rudov"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(629, 211, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4pds5"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(718, 211, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oecgp"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(807, 211, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y67u3"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(896, 211, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4lvxu"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(273, 699, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4atg"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(184, 699, 89, 122)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a2weq"]
-atlas = ExtResource("3_gyg6b")
+atlas = ExtResource("2_74jc5")
 region = Rect2(95, 699, 89, 122)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dc040"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2phcu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -384,162 +382,38 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Main" type="Control" unique_id=744958253]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_u1xfj")
-
-[node name="table background" type="TextureRect" parent="." unique_id=1203922891]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_q24mn")
-expand_mode = 1
-
-[node name="TableLayer" type="Control" parent="." unique_id=786356076]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="DealerSpot" type="CenterContainer" parent="TableLayer" unique_id=2008709907]
-custom_minimum_size = Vector2(0, -20)
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 152.0
-offset_bottom = 201.0
-grow_horizontal = 2
-
-[node name="DealerLabel" type="Label" parent="TableLayer/DealerSpot" unique_id=1289643099]
-layout_mode = 2
-text = "dealer
-"
-
-[node name="DealerCards" type="HBoxContainer" parent="TableLayer/DealerSpot" unique_id=1016956277]
-layout_mode = 2
-
-[node name="DeckCard" type="AnimatedSprite2D" parent="TableLayer/DealerSpot/DealerCards" unique_id=1569258231]
-position = Vector2(-43.999985, 264)
-scale = Vector2(0.6294458, 0.5788688)
-sprite_frames = SubResource("SpriteFrames_dc040")
-
-[node name="ThirdCard" type="AnimatedSprite2D" parent="TableLayer/DealerSpot/DealerCards" unique_id=75071807]
-position = Vector2(36.000015, 264)
-scale = Vector2(0.6294458, 0.57886934)
-sprite_frames = SubResource("SpriteFrames_dc040")
-
-[node name="Player" type="Control" parent="TableLayer" unique_id=1852709806]
-anchors_preset = 0
-offset_left = 192.0
-offset_top = 896.0
-offset_right = 232.0
-offset_bottom = 936.0
-
-[node name="Player2" type="Control" parent="TableLayer" unique_id=1837295053]
-anchors_preset = 0
-offset_top = 703.0
+[node name="player_panel" type="PanelContainer" unique_id=2086404399]
 offset_right = 40.0
-offset_bottom = 743.0
+offset_bottom = 40.0
+scale = Vector2(1.6159899, 0.9682293)
+script = ExtResource("1_4mj0i")
 
-[node name="Player3" type="Control" parent="TableLayer" unique_id=1687288959]
-anchors_preset = 0
-offset_top = 320.0
-offset_right = 40.0
-offset_bottom = 360.0
-
-[node name="Player4" type="Control" parent="TableLayer" unique_id=1450038510]
-anchors_preset = 0
-offset_left = 448.0
-offset_top = 321.0
-offset_right = 488.0
-offset_bottom = 361.0
-
-[node name="Player5" type="Control" parent="TableLayer" unique_id=43078648]
-anchors_preset = 0
-offset_left = 449.0
-offset_top = 705.0
-offset_right = 489.0
-offset_bottom = 745.0
-
-[node name="PotContainer" type="CenterContainer" parent="TableLayer" unique_id=753024375]
-layout_mode = 0
-offset_left = 256.0
-offset_top = 511.99997
-offset_right = 296.0
-offset_bottom = 552.0
-scale = Vector2(1.5449829, 1.3051898)
-
-[node name="PotLabel" type="Label" parent="TableLayer/PotContainer" unique_id=1815871]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1421103819]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=419116536]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -90.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(1.0036551, 1.0091345)
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+[node name="BettorLabel" type="Label" parent="VBoxContainer" unique_id=1397978766]
+self_modulate = Color(1, 0.84313726, 0, 1)
+layout_mode = 2
+text = "Bettor"
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=316714322]
+[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=309381306]
 layout_mode = 2
 
-[node name="ContinueButton" type="Button" parent="MarginContainer/CenterContainer" unique_id=1734507309]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-text = "Continue"
-
-[node name="ActionBar" type="HBoxContainer" parent="MarginContainer/CenterContainer" unique_id=298934309]
+[node name="MoneyLabel" type="Label" parent="VBoxContainer" unique_id=907971398]
 layout_mode = 2
 
-[node name="BetButton" type="Button" parent="MarginContainer/CenterContainer/ActionBar" unique_id=732262283]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-text = "Bet"
-
-[node name="FoldButton" type="Button" parent="MarginContainer/CenterContainer/ActionBar" unique_id=593209546]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-text = "Fold"
-
-[node name="AllInButton" type="Button" parent="MarginContainer/CenterContainer/ActionBar" unique_id=17633586]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-text = "All-in
-"
-
-[node name="BetPanel" type="HBoxContainer" parent="MarginContainer/CenterContainer" unique_id=143295079]
+[node name="StatusLabel" type="Label" parent="VBoxContainer" unique_id=1192652887]
 layout_mode = 2
 
-[node name="BetAmountSpinBox" type="SpinBox" parent="MarginContainer/CenterContainer/BetPanel" unique_id=1329694568]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=128670659]
 layout_mode = 2
 
-[node name="ConfirmBetButton" type="Button" parent="MarginContainer/CenterContainer/BetPanel" unique_id=468411959]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-text = "Confirm"
+[node name="Card1" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer" unique_id=1330856532]
+position = Vector2(2.842171e-14, 34.675076)
+scale = Vector2(0.30059138, 0.50168663)
+sprite_frames = SubResource("SpriteFrames_2phcu")
 
-[node name="CancelBetButton" type="Button" parent="MarginContainer/CenterContainer/BetPanel" unique_id=1856772838]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-text = "Cancel
-"
-
-[node name="GameManager" type="Node" parent="." unique_id=1791104210]
-script = ExtResource("2_nha0i")
+[node name="Card2" type="AnimatedSprite2D" parent="VBoxContainer/HBoxContainer" unique_id=2113275508]
+position = Vector2(34.65368, 34.675076)
+scale = Vector2(0.30059138, 0.50168663)
+sprite_frames = SubResource("SpriteFrames_2phcu")
