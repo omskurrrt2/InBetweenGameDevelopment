@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dqyykmeuewrcp"]
+
+[ext_resource type="Texture2D" uid="uid://dvc51fot0afvg" path="res://manila-bay-sunset-skyline-scaled.jpg" id="1_qs0hk"]
+[ext_resource type="Script" uid="uid://bakdc0vupbjw0" path="res://stage_card.gd" id="2_o3bp5"]
+
+[node name="StageCard" type="Button" unique_id=600969426]
+custom_minimum_size = Vector2(220, 220)
+offset_right = 220.0
+offset_bottom = 220.0
+focus_mode = 0
+flat = true
+script = ExtResource("2_o3bp5")
+
+[node name="CardBackground" type="TextureRect" parent="." unique_id=1519299491]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qs0hk")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1109952975]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.07058824)
+
+[node name="ContentMargin" type="MarginContainer" parent="." unique_id=2105253936]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 112.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ContentMargin" unique_id=1006432204]
+layout_mode = 2
+
+[node name="TitlePanel" type="Panel" parent="ContentMargin/VBoxContainer" unique_id=1934911456]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="ContentMargin/VBoxContainer/TitlePanel" unique_id=438492357]
+layout_mode = 0
+offset_left = 46.0
+offset_top = -20.0
+offset_right = 137.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 25
+text = "MACAU"
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="ContentMargin/VBoxContainer" unique_id=1837345472]
+layout_mode = 2
+
+[node name="PrizeLabel" type="Label" parent="ContentMargin/VBoxContainer" unique_id=844713816]
+layout_mode = 2
+text = "Prize: $1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyInLabel" type="Label" parent="ContentMargin/VBoxContainer" unique_id=855984238]
+layout_mode = 2
+text = "Buy-in : $1000
+"
+horizontal_alignment = 1
+vertical_alignment = 1

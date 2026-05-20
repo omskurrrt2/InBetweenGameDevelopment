@@ -2,6 +2,12 @@ extends Control
 
 const PLAYER_PANEL_SCENE = preload("res://scenes/ui/player_panel.tscn")
 
+const VIEWPORT_WIDTH := 480
+const VIEWPORT_HEIGHT := 800
+
+const SEAT_SIZE := Vector2(120, 105)
+const CARD_SCALE := Vector2(0.45, 0.45)
+
 @onready var game_manager = $GameManager
 
 @onready var dealer_label: Label = $TableLayer/DealerSpot/DealerLabel
@@ -30,6 +36,7 @@ const PLAYER_PANEL_SCENE = preload("res://scenes/ui/player_panel.tscn")
 
 var seat_nodes: Array[Control] = []
 
+
 func _ready() -> void:
 	seat_nodes = [
 		player,
@@ -38,6 +45,8 @@ func _ready() -> void:
 		player_4,
 		player_5
 	]
+
+	_apply_mobile_layout()
 
 	dealer_label.text = "Dealer"
 
@@ -59,16 +68,114 @@ func _ready() -> void:
 	if game_manager.process_human_auto_turn_if_needed():
 		update_ui()
 
+
+func _apply_mobile_layout() -> void:
+	# Player seat positions for 480 x 800.
+	player.position = Vector2(180, 625)     # P1 / human bottom center
+	player_2.position = Vector2(20, 610)    # P2 bottom left
+	player_3.position = Vector2(20, 285)    # P3 left
+	player_4.position = Vector2(340, 285)   # P4 right
+	player_5.position = Vector2(180, 110)   # P5 / top
+
+	# Dealer spot.
+	if has_node("TableLayer/DealerSpot"):
+		var dealer_spot: Control = $TableLayer/DealerSpot
+		dealer_spot.position = Vector2(170, 105)
+		dealer_spot.custom_minimum_size = Vector2(150, 90)
+		dealer_spot.size = Vector2(150, 90)
+
+	if dealer_label != null:
+		dealer_label.add_theme_font_size_override("font_size", 16)
+		dealer_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+
+	if dealer_cards != null:
+		dealer_cards.add_theme_constant_override("separation", 18)
+		dealer_cards.alignment = BoxContainer.ALIGNMENT_CENTER
+
+	_setup_sprite_size(deck_card)
+	_setup_sprite_size(third_card_sprite)
+
+	# Pot info.
+	if has_node("TableLayer/PotContainer"):
+		var pot_container: Control = $TableLayer/PotContainer
+		pot_container.position = Vector2(275, 475)
+		pot_container.custom_minimum_size = Vector2(180, 120)
+		pot_container.size = Vector2(180, 120)
+
+	if pot_label != null:
+		pot_label.add_theme_font_size_override("font_size", 22)
+		pot_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		pot_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+
+	# Bottom action area.
+	if has_node("MarginContainer"):
+		var margin_container: MarginContainer = $MarginContainer
+		margin_container.set_anchors_preset(Control.PRESET_FULL_RECT)
+		margin_container.offset_left = 0
+		margin_container.offset_top = 0
+		margin_container.offset_right = 0
+		margin_container.offset_bottom = 0
+		margin_container.add_theme_constant_override("margin_left", 15)
+		margin_container.add_theme_constant_override("margin_top", 720)
+		margin_container.add_theme_constant_override("margin_right", 15)
+		margin_container.add_theme_constant_override("margin_bottom", 15)
+
+	if has_node("MarginContainer/CenterContainer"):
+		var center: CenterContainer = $MarginContainer/CenterContainer
+		center.custom_minimum_size = Vector2(450, 65)
+		center.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		center.size_flags_vertical = Control.SIZE_SHRINK_END
+
+	if action_bar != null:
+		action_bar.add_theme_constant_override("separation", 8)
+		action_bar.alignment = BoxContainer.ALIGNMENT_CENTER
+		action_bar.custom_minimum_size = Vector2(440, 45)
+
+	if bet_panel != null:
+		bet_panel.add_theme_constant_override("separation", 6)
+		bet_panel.alignment = BoxContainer.ALIGNMENT_CENTER
+		bet_panel.custom_minimum_size = Vector2(440, 45)
+
+	_setup_button(bet_button, Vector2(110, 42), 15)
+	_setup_button(fold_button, Vector2(110, 42), 15)
+	_setup_button(all_in_button, Vector2(110, 42), 15)
+	_setup_button(continue_button, Vector2(160, 44), 16)
+	_setup_button(confirm_bet_button, Vector2(85, 38), 13)
+	_setup_button(cancel_bet_button, Vector2(85, 38), 13)
+
+	if bet_amount_spin_box != null:
+		bet_amount_spin_box.custom_minimum_size = Vector2(120, 38)
+
+
+func _setup_button(button: Button, button_size: Vector2, font_size: int) -> void:
+	if button == null:
+		return
+
+	button.custom_minimum_size = button_size
+	button.add_theme_font_size_override("font_size", font_size)
+
+
+func _setup_sprite_size(sprite: AnimatedSprite2D) -> void:
+	if sprite == null:
+		return
+
+	sprite.scale = CARD_SCALE
+
+
 func _setup_seat_sizes() -> void:
 	for seat in seat_nodes:
-		seat.custom_minimum_size = Vector2(160, 130)
-		seat.size = Vector2(160, 130)
+		seat.custom_minimum_size = SEAT_SIZE
+		seat.size = SEAT_SIZE
+
 
 func _setup_dealer_cards() -> void:
 	deck_card.frame = 0
 	third_card_sprite.frame = 0
 	deck_card.visible = true
 	third_card_sprite.visible = true
+	_setup_sprite_size(deck_card)
+	_setup_sprite_size(third_card_sprite)
+
 
 func build_player_seats() -> void:
 	for seat in seat_nodes:
@@ -86,7 +193,10 @@ func build_player_seats() -> void:
 			continue
 
 		var panel: Control = seat_nodes[i].get_child(0)
-		panel.position = (seat_nodes[i].size - panel.size) / 2.0
+		panel.position = Vector2.ZERO
+		panel.custom_minimum_size = SEAT_SIZE
+		panel.size = SEAT_SIZE
+
 
 func update_ui() -> void:
 	var current_text: String = "None"
@@ -136,6 +246,7 @@ func update_ui() -> void:
 	_update_dealer_cards()
 	_update_action_area()
 
+
 func _update_dealer_cards() -> void:
 	deck_card.visible = game_manager.deck_manager.get_remaining_count() > 0
 
@@ -146,11 +257,13 @@ func _update_dealer_cards() -> void:
 		third_card_sprite.visible = true
 		third_card_sprite.frame = 0
 
+
 func _reset_action_bar_labels() -> void:
 	bet_button.text = "Bet"
 	fold_button.text = "Fold"
 	all_in_button.text = "All In"
 	all_in_button.visible = true
+
 
 func _update_action_area() -> void:
 	continue_button.visible = false
@@ -214,6 +327,7 @@ func _update_action_area() -> void:
 	continue_button.disabled = false
 	continue_button.text = "Continue"
 
+
 func _open_bet_panel() -> void:
 	var min_bet: int = game_manager.get_min_bet()
 	var max_bet: int = game_manager.get_max_bet_for_current_player()
@@ -226,9 +340,11 @@ func _open_bet_panel() -> void:
 	action_bar.visible = false
 	bet_panel.visible = true
 
+
 func _close_bet_panel() -> void:
 	bet_panel.visible = false
 	_update_action_area()
+
 
 func _on_continue_pressed() -> void:
 	if game_manager.is_waiting_after_reveal():
@@ -269,6 +385,7 @@ func _on_continue_pressed() -> void:
 	if game_manager.process_human_auto_turn_if_needed():
 		update_ui()
 
+
 func _on_bet_pressed() -> void:
 	if game_manager.has_pending_pair_choice():
 		game_manager.choose_pair_higher()
@@ -279,6 +396,7 @@ func _on_bet_pressed() -> void:
 		return
 
 	_open_bet_panel()
+
 
 func _on_fold_pressed() -> void:
 	if game_manager.has_pending_pair_choice():
@@ -295,6 +413,7 @@ func _on_fold_pressed() -> void:
 	if game_manager.process_human_auto_turn_if_needed():
 		update_ui()
 
+
 func _on_all_in_pressed() -> void:
 	if game_manager.has_pending_pair_choice():
 		return
@@ -304,6 +423,7 @@ func _on_all_in_pressed() -> void:
 
 	if game_manager.process_human_auto_turn_if_needed():
 		update_ui()
+
 
 func _on_confirm_bet_pressed() -> void:
 	var amount: int = int(bet_amount_spin_box.value)
@@ -317,8 +437,10 @@ func _on_confirm_bet_pressed() -> void:
 	if game_manager.process_human_auto_turn_if_needed():
 		update_ui()
 
+
 func _on_cancel_bet_pressed() -> void:
 	_close_bet_panel()
+
 
 func _card_to_frame(card: Card) -> int:
 	var rank_map = {

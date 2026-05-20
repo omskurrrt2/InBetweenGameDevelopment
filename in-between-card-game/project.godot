@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="InBetweenCardGame"
-run/main_scene="uid://dejn3bi06l48k"
+run/main_scene="uid://dsrglj2gikr1x"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=648
-window/size/viewport_height=1152
+window/size/viewport_width=480
+window/size/viewport_height=800
 window/stretch/mode="viewport"
 
 [dotnet]

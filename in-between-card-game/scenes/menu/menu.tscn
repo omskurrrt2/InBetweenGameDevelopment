@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://dsrglj2gikr1x"]
+
+[ext_resource type="Script" uid="uid://ca3jaf68khbpj" path="res://scripts/core/menu.gd" id="1_mcvr8"]
+[ext_resource type="Texture2D" uid="uid://dav3r5wjovupj" path="res://menu bg.jpg" id="2_mcvr8"]
+[ext_resource type="Texture2D" uid="uid://c26u6yfd0sk0e" path="res://417236584_399106346003055_6308372991011246719_n.jpg" id="3_e0arn"]
+[ext_resource type="PackedScene" uid="uid://dqyykmeuewrcp" path="res://scripts/core/stage_card.tscn" id="4_037ec"]
+[ext_resource type="Texture2D" uid="uid://ca3c7padbm2mj" path="res://Macau-818x460.jpg" id="5_y1o0p"]
+[ext_resource type="Texture2D" uid="uid://bib6t1ddrhdab" path="res://Singapore-3.jpg" id="6_3y2rt"]
+[ext_resource type="Texture2D" uid="uid://dkg0vnru1kcs1" path="res://lasvegas.jpeg" id="7_t0a87"]
+
+[node name="Menu" type="Control" unique_id=744958253]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mcvr8")
+
+[node name="table background" type="TextureRect" parent="." unique_id=1203922891]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mcvr8")
+expand_mode = 1
+
+[node name="TopBar" type="MarginContainer" parent="." unique_id=1980044441]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 102.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopBar" unique_id=60604610]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PofilePanel" type="HBoxContainer" parent="TopBar/HBoxContainer" unique_id=1599570360]
+layout_mode = 2
+
+[node name="AvatarFrame" type="TextureRect" parent="TopBar/HBoxContainer/PofilePanel" unique_id=1706971665]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("3_e0arn")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="NameMoneyBox" type="VBoxContainer" parent="TopBar/HBoxContainer/PofilePanel" unique_id=782307010]
+layout_mode = 2
+
+[node name="PlayerNameLabel" type="Label" parent="TopBar/HBoxContainer/PofilePanel/NameMoneyBox" unique_id=13650397]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Zareth
+"
+
+[node name="CurrencyRow" type="HBoxContainer" parent="TopBar/HBoxContainer/PofilePanel/NameMoneyBox" unique_id=1390170361]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="TopBar/HBoxContainer/PofilePanel/NameMoneyBox/CurrencyRow" unique_id=2073167776]
+layout_mode = 2
+text = "$1000
+"
+
+[node name="GemLabel" type="Label" parent="TopBar/HBoxContainer/PofilePanel/NameMoneyBox/CurrencyRow" unique_id=1213751598]
+layout_mode = 2
+text = "💎500
+"
+
+[node name="ContentMargin" type="MarginContainer" parent="." unique_id=1647044957]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = 8.0
+offset_right = 68.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ContentMargin" unique_id=1970899817]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="StageList" type="VBoxContainer" parent="ContentMargin/VBoxContainer" unique_id=1447956009]
+custom_minimum_size = Vector2(560, 155)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_constants/separation = 18
+
+[node name="StageCard_Macau" parent="ContentMargin/VBoxContainer/StageList" unique_id=600969426 instance=ExtResource("4_037ec")]
+clip_contents = true
+custom_minimum_size = Vector2(360, 78)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+background_texture = ExtResource("5_y1o0p")
+target_scene = "res://main/Main.tscn"
+
+[node name="StageCard_Singapore" parent="ContentMargin/VBoxContainer/StageList" unique_id=656526362 instance=ExtResource("4_037ec")]
+clip_contents = true
+custom_minimum_size = Vector2(360, 78)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+stage_name = "SINGAPORE"
+background_texture = ExtResource("6_3y2rt")
+target_scene = "res://main/Main.tscn"
+
+[node name="StageCard_LasVegas" parent="ContentMargin/VBoxContainer/StageList" unique_id=1846726779 instance=ExtResource("4_037ec")]
+clip_contents = true
+custom_minimum_size = Vector2(360, 78)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+stage_name = "LAS VEGAS"
+prize_text = "$100,000"
+buy_in_text = "$100,000"
+background_texture = ExtResource("7_t0a87")
+target_scene = "res://main/Main.tscn"
+
+[node name="ButtomButtons" type="HBoxContainer" parent="ContentMargin/VBoxContainer" unique_id=1329359521]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="ContentMargin/VBoxContainer/ButtomButtons" unique_id=1907093549]
+layout_mode = 2
+text = "back
+"
+
+[node name="MoreButton" type="Button" parent="ContentMargin/VBoxContainer/ButtomButtons" unique_id=1690981555]
+layout_mode = 2
+text = "more
+"
